@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Accessibility statement for ThaBarWa International Foundation landing page.">
+  <title>Accessibility Statement — ThaBarWa International Foundation</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <p class="logo">
+        <a href="index.html" class="logo-text">ThaBarWa International Foundation</a>
+      </p>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul id="main-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#donate">Donate</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav-list" aria-label="Open menu">
+        <span aria-hidden="true">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="main" role="main">
+    <div class="container" style="padding-top: var(--space-2xl); padding-bottom: var(--space-2xl);">
+      <h1>Accessibility Statement</h1>
+      <p><strong>ThaBarWa International Foundation</strong> is committed to making this landing page usable for as many people as possible, including people with disabilities.</p>
+
+      <h2>Standards and goals</h2>
+      <p>We aim to meet or exceed:</p>
+      <ul>
+        <li><strong>WCAG 2.1</strong> (Web Content Accessibility Guidelines) at Level AA, and Level AAA where practical.</li>
+        <li>Relevant aspects of <strong>ISO 40500</strong> (equivalent to WCAG 2.0) and best practice for international NGOs.</li>
+      </ul>
+
+      <h2>What we do</h2>
+      <ul>
+        <li>Semantic HTML (headings, landmarks, sections) so assistive technologies can navigate meaningfully.</li>
+        <li>Skip link to jump to main content.</li>
+        <li>Visible focus styles for keyboard users (outline and offset).</li>
+        <li>Sufficient colour contrast between text and background (meeting WCAG AA).</li>
+        <li>Responsive layout that works at different zoom levels and screen sizes.</li>
+        <li>Support for reduced motion (respects <code>prefers-reduced-motion</code>).</li>
+        <li>Links that open in a new window are indicated in text and with <code>rel="noopener noreferrer"</code>.</li>
+      </ul>
+
+      <h2>Feedback</h2>
+      <p>If you have trouble using any part of this site or need information in another format, please contact us:</p>
+      <p>Email: <a href="mailto:TabawaCenterUSA@gmail.com">TabawaCenterUSA@gmail.com</a><br>
+      Phone: <a href="tel:+16262158045">+1 (626) 215-8045</a></p>
+
+      <p><a href="index.html">Back to home</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p><a href="index.html#main-content">Back to top</a></p>
+      <p class="footer-legal"><small>ThaBarWa International Foundation.</small></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
