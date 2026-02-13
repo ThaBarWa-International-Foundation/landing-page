@@ -20,13 +20,11 @@
       </p>
       <nav class="main-nav" aria-label="Main navigation">
         <ul id="main-nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#media">Photos &amp; Videos</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#schedule">Sayadaw Schedule</a></li>
-          <li><a href="#plans">Plans &amp; Needs</a></li>
-          <li><a href="#stories">Success Stories</a></li>
-          <li><a href="#donate">Donate</a></li>
+          <li><a href="#about">About History</a></li>
+          <li><a href="#centers">Centers Addresses</a></li>
+          <li><a href="#meditation">Meditation</a></li>
+          <li><a href="#contribute">Volunteer</a></li>
+          <li><a href="#plans">Plans Projects</a></li>
         </ul>
       </nav>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="main-nav-list" aria-label="Open menu">
@@ -36,20 +34,116 @@
   </header>
 
   <main id="main-content" class="main" role="main">
-    <section class="hero" aria-labelledby="hero-heading">
+    <!-- Above the fold: quiet banner only -->
+    <section class="hero hero-banner" aria-labelledby="hero-heading">
       <div class="hero-inner">
         <h1 id="hero-heading">ThaBarWa International Foundation</h1>
         <p class="hero-tagline">Give, Share, Care, Protect &amp; Co-operate</p>
-        <p class="hero-intro">Buddha’s teaching of Generosity, Non-harming, and Mental Development — a platform for good deeds worldwide.</p>
-        <p><a href="#donate" class="button button-primary">Donate to a cause</a></p>
       </div>
     </section>
 
-    <section id="about" class="section section-about" aria-labelledby="about-heading">
+    <!-- Featured photo — image with wrapping text -->
+    <section id="featured-photo" class="section" aria-labelledby="featured-photo-heading">
       <div class="container">
-        <h2 id="about-heading">About ThaBarWa</h2>
+        <h2 id="featured-photo-heading" class="visually-hidden">Featured</h2>
+        <article class="inline-media-card" role="listitem">
+          <div class="media-placeholder" role="img" aria-label="Placeholder for ThaBarWa centre photo">
+            <span>Photo</span>
+          </div>
+          <div>
+            <h3 class="media-title">Centre life</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Mission & Vision — central, below fold -->
+    <section id="mission" class="section section-mission" aria-labelledby="mission-heading">
+      <div class="container container-narrow">
+        <h2 id="mission-heading">Mission &amp; Vision</h2>
         <p class="lead">The Foundation is built on the Buddha’s teaching of Generosity, Non-harming, and Mental Development — the solid platform for every “house” of good deeds.</p>
         <p>The <strong>ThaBarWa House</strong> is a Good Deeds House on this platform, built with Wisdom as the roof, Concentration as the floor, and Morality as the walls. From project to project, land to land, country to country, we serve rich and poor, young and old, healthy and sick.</p>
+        <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">Learn more on our main site <span aria-hidden="true">(opens in new window)</span></a></p>
+      </div>
+    </section>
+
+    <!-- Two-column: Left = News, Where Sayadaw is, How to contribute | Right = Photo, Video -->
+    <section class="section section-home-grid" aria-label="News, location, media and how to contribute">
+      <div class="home-grid container-wide">
+        <div class="home-grid-left">
+          <div id="news" class="home-block home-block-news" aria-labelledby="news-heading">
+            <h2 id="news-heading">News</h2>
+            <ul class="news-list news-list-compact">
+              <li class="news-item">
+                <article>
+                  <h3>New centre opening</h3>
+                  <p class="news-meta">Example — replace with real dates</p>
+                  <p>When we open a new centre or receive land, we post the news here.</p>
+                </article>
+              </li>
+              <li class="news-item">
+                <article>
+                  <h3>Land donation</h3>
+                  <p class="news-meta">Example — replace with real dates</p>
+                  <p>Generous land donations allow us to expand our good deeds.</p>
+                </article>
+              </li>
+            </ul>
+            <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">Full news <span aria-hidden="true">(opens in new window)</span></a></p>
+          </div>
+
+          <div id="schedule" class="home-block home-block-map" aria-labelledby="where-sayadaw-heading">
+            <h2 id="where-sayadaw-heading">Where Sayadaw is</h2>
+            <div class="map-placeholder" role="img" aria-label="Map showing Sayadaw location and schedule">
+              <span>Map</span>
+            </div>
+            <p>Current schedule and location for Master Sayadaw Ashin Ottamathara’s teachings and visits.</p>
+            <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">Free teachings online and in person <span aria-hidden="true">(opens in new window)</span></a></p>
+          </div>
+
+          <div id="contribute" class="home-block home-block-contribute" aria-labelledby="contribute-heading">
+            <h2 id="contribute-heading">How to contribute</h2>
+            <p>Donate to a cause, volunteer, or offer skills and materials. 100% of donations go to the chosen project.</p>
+            <p><a href="#donate" class="button button-primary">Donate</a> <a href="#plans" class="button button-secondary">Plans &amp; needs</a></p>
+          </div>
+        </div>
+
+        <div class="home-grid-right">
+          <div class="home-block home-block-photo" aria-labelledby="photo-heading">
+            <h2 id="photo-heading">Photo</h2>
+            <div class="media-placeholder media-placeholder-large" role="img" aria-label="ThaBarWa centre photo">
+              <span>Photo</span>
+            </div>
+          </div>
+
+          <div class="home-block home-block-video" aria-labelledby="video-heading">
+            <h2 id="video-heading">Video</h2>
+            <p class="video-subtitle">Short intro</p>
+            <div class="media-placeholder media-placeholder-video" role="img" aria-label="Short introductory video">
+              <span>Video</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Large Sayadaw section (banner) -->
+    <section id="sayadaw" class="section section-sayadaw-banner" aria-labelledby="sayadaw-heading">
+      <div class="container">
+        <h2 id="sayadaw-heading" class="sayadaw-banner-title">Sayadaw Ashin Ottamathara</h2>
+        <p class="lead">Master Sayadaw’s life vision and the philosophy of ThaBarWa: free stay and food, free meditation and mindfulness, freedom and transformation of life.</p>
+        <p><a href="https://stigthai.wixsite.com/thabarwa" class="button button-primary" target="_blank" rel="noopener noreferrer">Teachings &amp; schedule <span aria-hidden="true">(opens in new window)</span></a></p>
+      </div>
+    </section>
+
+    <!-- About History (full section for nav target) -->
+    <section id="about" class="section section-about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About &amp; History</h2>
+        <p class="lead">The Foundation is the Buddha’s teaching of Generosity, Non-harming, and Mental Development — the solid platform for every “house” of good deeds.</p>
         <ul class="about-list">
           <li>Free stay and food for everyone, without limit</li>
           <li>Free meditation, mindfulness and detachment</li>
@@ -61,110 +155,50 @@
       </div>
     </section>
 
-    <section id="media" class="section section-media" aria-labelledby="media-heading">
+    <!-- Centers Addresses -->
+    <section id="centers" class="section section-centers" aria-labelledby="centers-heading">
       <div class="container">
-        <h2 id="media-heading">Photos &amp; Videos</h2>
-        <p class="section-desc">See life at ThaBarWa centres: teachings, daily life, and impact.</p>
-        <div class="media-grid" role="list">
-          <article class="media-card" role="listitem">
-            <div class="media-placeholder" role="img" aria-label="Placeholder for ThaBarWa centre photo">
-              <span>Photo 1</span>
-            </div>
-            <h3 class="media-title">Centre life</h3>
-          </article>
-          <article class="media-card" role="listitem">
-            <div class="media-placeholder" role="img" aria-label="Placeholder for teaching or meditation">
-              <span>Photo 2</span>
-            </div>
-            <h3 class="media-title">Teachings &amp; meditation</h3>
-          </article>
-          <article class="media-card" role="listitem">
-            <div class="media-placeholder" role="img" aria-label="Placeholder for video content">
-              <span>Video</span>
-            </div>
-            <h3 class="media-title">Videos</h3>
-          </article>
-        </div>
-        <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">More in ThaBarWa Media Library <span aria-hidden="true">(opens in new window)</span></a></p>
+        <h2 id="centers-heading">Centers &amp; Addresses</h2>
+        <address class="footer-contact">
+          <p><strong>ThaBarWa Center USA</strong></p>
+          <p>13212 Francisquito Ave, Baldwin Park CA 91706</p>
+          <p>Phone: <a href="tel:+16262158045">+1 (626) 215-8045</a></p>
+          <p>Email: <a href="mailto:TabawaCenterUSA@gmail.com">TabawaCenterUSA@gmail.com</a></p>
+          <p>California lic. no. 1986196 / EIN 95-4639892</p>
+        </address>
+        <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">All ThaBarWa centres and contact info <span aria-hidden="true">(opens in new window)</span></a></p>
       </div>
     </section>
 
-    <section id="news" class="section section-news" aria-labelledby="news-heading">
+    <!-- Meditation -->
+    <section id="meditation" class="section section-meditation" aria-labelledby="meditation-heading">
       <div class="container">
-        <h2 id="news-heading">News &amp; Events</h2>
-        <p class="section-desc">Major updates: new land donations, centre openings, and milestones.</p>
-        <ul class="news-list">
-          <li class="news-item">
-            <article>
-              <h3>New centre opening</h3>
-              <p class="news-meta">Example — replace with real dates</p>
-              <p>When we open a new centre or receive land, we post the news here so you can follow our growth.</p>
-            </article>
-          </li>
-          <li class="news-item">
-            <article>
-              <h3>Land donation</h3>
-              <p class="news-meta">Example — replace with real dates</p>
-              <p>Generous land donations allow us to expand our good deeds. Latest donations will be listed here.</p>
-            </article>
-          </li>
-        </ul>
-        <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">Full news on main site <span aria-hidden="true">(opens in new window)</span></a></p>
+        <h2 id="meditation-heading">Meditation</h2>
+        <p>Free meditation and mindfulness at ThaBarWa centres worldwide. Free teachings online and in person with Master Sayadaw Ashin Ottamathara.</p>
+        <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">Free teachings and meditation <span aria-hidden="true">(opens in new window)</span></a></p>
       </div>
     </section>
 
-    <section id="schedule" class="section section-schedule" aria-labelledby="schedule-heading">
-      <div class="container">
-        <h2 id="schedule-heading">Sayadaw Ashin Ottamathara — Schedule</h2>
-        <p class="section-desc">Current schedule for Master Sayadaw’s teachings and visits.</p>
-        <div class="schedule-box">
-          <p><strong>Schedule updates</strong> are posted here so you can plan visits or join events. Check back for the latest dates and locations.</p>
-          <p class="schedule-placeholder">Schedule to be updated regularly.</p>
-        </div>
-        <p><a href="https://stigthai.wixsite.com/thabarwa" class="link-external" target="_blank" rel="noopener noreferrer">Free teachings online and in person <span aria-hidden="true">(opens in new window)</span></a></p>
-      </div>
-    </section>
-
+    <!-- Plans & Projects -->
     <section id="plans" class="section section-plans" aria-labelledby="plans-heading">
       <div class="container">
-        <h2 id="plans-heading">Plans &amp; Needs</h2>
+        <h2 id="plans-heading">Plans &amp; Projects</h2>
         <p class="section-desc">Where we aim to grow and what we need: property, materials, people.</p>
         <ul class="plans-list">
-          <li><strong>Regional development:</strong> Plans to develop in new regions — we will list priorities here.</li>
+          <li><strong>Regional development:</strong> Plans to develop in new regions.</li>
           <li><strong>Property:</strong> When we are looking for land or buildings, we post details here.</li>
           <li><strong>Materials:</strong> Specific needs (construction, medical, etc.) for our centres.</li>
-          <li><strong>People:</strong> Calls for volunteers, skills, or long-term support.</li>
+          <li><strong>People:</strong> Volunteers, skills, or long-term support.</li>
         </ul>
-        <p>Contact your nearest ThaBarWa centre or use the links below to offer support.</p>
+        <p><a href="mailto:TabawaCenterUSA@gmail.com">Contact us</a> to offer support.</p>
       </div>
     </section>
 
-    <section id="stories" class="section section-stories" aria-labelledby="stories-heading">
-      <div class="container">
-        <h2 id="stories-heading">Success Stories</h2>
-        <p class="section-desc">Healing, recovery, and transformation through ThaBarWa.</p>
-        <ul class="stories-list">
-          <li class="story-card">
-            <article>
-              <h3>Healing &amp; recovery</h3>
-              <p>Stories of healing from illness and recovery from addiction — shared with permission — show how the practice and community support transformation.</p>
-            </article>
-          </li>
-          <li class="story-card">
-            <article>
-              <h3>Overcoming challenges</h3>
-              <p>People who overcame serious life challenges with the support of ThaBarWa centres. We will add brief, anonymised stories here.</p>
-            </article>
-          </li>
-        </ul>
-      </div>
-    </section>
-
+    <!-- Donate -->
     <section id="donate" class="section section-donate" aria-labelledby="donate-heading">
       <div class="container">
         <h2 id="donate-heading">Donate</h2>
         <p class="lead">100% of your donation goes to the cause or project you choose.</p>
-        <p>Donate to specific projects and centres: hospitals, schools, animal care, meditation centres, emergency need (e.g. abandoned children from the war in Myanmar), and more.</p>
         <ul class="donate-actions">
           <li><a href="https://www.paypal.me/thabarwacenter" class="button button-primary" target="_blank" rel="noopener noreferrer">Donate with PayPal <span aria-hidden="true">(opens in new window)</span></a></li>
           <li><a href="https://stigthai.wixsite.com/thabarwa" class="button button-secondary" target="_blank" rel="noopener noreferrer">Choose a project on main site <span aria-hidden="true">(opens in new window)</span></a></li>
@@ -177,14 +211,12 @@
     <div class="container">
       <h2 class="visually-hidden">Contact and legal</h2>
       <address class="footer-contact">
-        <p>ThaBarWa Center USA</p>
-        <p>13212 Francisquito Ave, Baldwin Park CA 91706</p>
-        <p>Phone: <a href="tel:+16262158045">+1 (626) 215-8045</a></p>
-        <p>Email: <a href="mailto:TabawaCenterUSA@gmail.com">TabawaCenterUSA@gmail.com</a></p>
+        <p>ThaBarWa Center USA — 13212 Francisquito Ave, Baldwin Park CA 91706</p>
+        <p>Phone: <a href="tel:+16262158045">+1 (626) 215-8045</a> · Email: <a href="mailto:TabawaCenterUSA@gmail.com">TabawaCenterUSA@gmail.com</a></p>
         <p>California lic. no. 1986196 / EIN 95-4639892</p>
       </address>
       <p><a href="#main-content">Back to top</a> · <a href="accessibility.html">Accessibility statement</a></p>
-      <p class="footer-legal"><small>ThaBarWa International Foundation. This is a simple landing page; for full information visit the main site.</small></p>
+      <p class="footer-legal"><small>ThaBarWa International Foundation. For full information visit the main site.</small></p>
     </div>
   </footer>
 

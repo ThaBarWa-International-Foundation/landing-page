@@ -252,16 +252,35 @@ a:focus-visible {
   padding: 0 var(--space-l);
 }
 
-/* Hero */
+.container-narrow {
+  max-width: 40rem;
+}
+
+.container-wide {
+  max-width: 72rem;
+}
+
+/* Hero — above the fold: quiet banner only (5–10 sec to grasp) */
 .hero {
   background: var(--color-accent-light);
   padding: var(--space-2xl) var(--space-l);
   text-align: center;
 }
 
-.hero-inner {
-  max-width: 40rem;
-  margin: 0 auto;
+.hero-banner {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-l);
+}
+
+.hero-banner .hero-inner {
+  max-width: 36rem;
+}
+
+.hero-banner .hero-tagline {
+  margin-bottom: 0;
 }
 
 .hero-tagline {
@@ -308,6 +327,144 @@ a:focus-visible {
 .link-external::after {
   content: " ↗";
   font-style: normal;
+}
+
+/* Mission & Vision */
+.section-mission {
+  padding-top: var(--space-2xl);
+}
+
+/* Home two-column: left = News, Where Sayadaw (map), Donation invite; right = Photos, Videos */
+.section-home-grid {
+  padding-top: var(--space-xl);
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(18rem, 1fr) minmax(18rem, 1fr);
+  gap: var(--space-2xl) var(--space-2xl);
+  margin: 0 auto;
+  padding: 0 var(--space-l);
+  align-items: start;
+}
+
+.home-grid-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.home-grid-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  min-height: 0; /* allow flex children to shrink if needed */
+}
+
+.home-block {
+  padding: var(--space-l);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.home-block h2 {
+  margin-bottom: var(--space-m);
+  font-size: 1.25rem;
+}
+
+.news-list-compact .news-item {
+  margin-bottom: var(--space-m);
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.news-list-compact .news-item:last-child {
+  border-bottom: 0;
+}
+
+.map-placeholder {
+  aspect-ratio: 1;
+  max-height: 14rem;
+  background: var(--color-border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-m);
+}
+
+.media-placeholder-large {
+  aspect-ratio: 4/3;
+  min-height: 10rem;
+}
+
+.media-placeholder-video {
+  aspect-ratio: 16/9;
+  min-height: 8rem;
+}
+
+.video-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-s);
+}
+
+@media (max-width: 52rem) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-grid-left {
+    order: 1;
+  }
+
+  .home-grid-right {
+    order: 2;
+  }
+}
+
+/* Sayadaw banner — large section */
+.section-sayadaw-banner {
+  background: var(--color-accent);
+  color: var(--color-surface);
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.section-sayadaw-banner .lead,
+.section-sayadaw-banner p {
+  color: inherit;
+  opacity: 0.95;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-sayadaw-banner .sayadaw-banner-title {
+  color: var(--color-surface);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: var(--space-l);
+}
+
+.section-sayadaw-banner .button-primary {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border-color: var(--color-surface);
+}
+
+.section-sayadaw-banner .button-primary:hover {
+  background: var(--color-bg);
+  color: var(--color-accent);
+  border-color: var(--color-bg);
+}
+
+.section-sayadaw-banner a:not(.button) {
+  color: #b8e0b8;
 }
 
 /* Media grid */
@@ -452,3 +609,36 @@ a:focus-visible {
   white-space: nowrap;
   border: 0;
 }
+
+/* Featured photo: image floated so text wraps around it */
+#featured-photo {
+  padding: var(--space-2xl) var(--space-l);
+}
+
+.inline-media-card {
+  overflow: hidden; /* clearfix */
+}
+
+.inline-media-card .media-placeholder {
+  float: left;
+  width: 40%;
+  min-width: 12rem;
+  max-width: 20rem;
+  aspect-ratio: 4/3;
+  margin: 0 var(--space-l) var(--space-m) 0;
+  padding: 0;
+}
+
+.inline-media-card .media-title {
+  margin-top: 0;
+}
+
+@media (max-width: 28rem) {
+  .inline-media-card .media-placeholder {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin-bottom: var(--space-m);
+  }
+}
+
