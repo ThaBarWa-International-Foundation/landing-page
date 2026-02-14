@@ -1,0 +1,1526 @@
+/* Global styles – fonts and PrimeFlex/PrimeNG v20 variable bridge */
+
+/* ThaBarWa logo color scheme – from logo (e3a04f = warm amber/gold) */
+:root {
+  /* Override PrimeNG primary with ThaBarWa logo palette */
+  --p-primary-50: #fdf6ec;
+  --p-primary-100: #fbead2;
+  --p-primary-200: #f6d4a5;
+  --p-primary-300: #f0bd78;
+  --p-primary-400: #e9a652;
+  --p-primary-500: #e3a04f;
+  --p-primary-600: #d48838;
+  --p-primary-700: #b86d2f;
+  --p-primary-800: #93562b;
+  --p-primary-900: #784826;
+  --p-primary-950: #402512;
+  --p-primary-color: #e3a04f;
+  --p-primary-contrast-color: #fff;
+
+  /* WCAG 1.4.3 contrast: text and background (AA 4.5:1 normal, 3:1 large) */
+  --color-text: #212529;
+  --color-text-secondary: #495057;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+
+  /* Bridge PrimeNG v20 (--p-*) to PrimeFlex (--primary-color, etc.) */
+  --primary-color: var(--p-primary-color);
+  --primary-color-text: var(--p-primary-contrast-color);
+  --text-color: var(--p-content-color, var(--color-text));
+  --text-color-secondary: var(--p-content-muted-color, var(--color-text-secondary));
+  --surface-ground: var(--p-content-background, #f8f9fa);
+  --surface-section: var(--p-content-background, var(--color-surface));
+  --surface-card: var(--p-content-background, #ffffff);
+  --surface-overlay: var(--p-overlay-background, #ffffff);
+  --surface-hover: var(--p-content-hover-background, #e9ecef);
+  --surface-border: var(--p-content-border-color, #dee2e6);
+  /* Primary palette for PrimeFlex .text-primary-50 etc. */
+  --primary-50: var(--p-primary-50);
+  --primary-100: var(--p-primary-100);
+  --primary-200: var(--p-primary-200);
+  --primary-300: var(--p-primary-300);
+  --primary-400: var(--p-primary-400);
+  --primary-500: var(--p-primary-500);
+  --primary-600: var(--p-primary-600);
+  --primary-700: var(--p-primary-700);
+  --primary-800: var(--p-primary-800);
+  --primary-900: var(--p-primary-900);
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+/* Skip link – visible on focus for keyboard/screen reader (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 0.75rem 1rem;
+  background: var(--p-primary-color, #e3a04f);
+  color: #fff;
+  font-weight: 600;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-color, #212529);
+  background-color: #fff;
+}
+/* Ensure text is visible throughout */
+div, p, span, h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+}
+main {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.section {
+  background-color: #fff;
+}
+
+.grid {
+  margin: 0 !important;
+}
+/* Ensure solutions strip has no top margin */
+.solutions-strip.grid {
+  margin-top: 0 !important;
+}
+
+/* ThaBarWa primary – logo color scheme applied throughout */
+.bg-primary {
+  background-color: var(--p-primary-color, #e3a04f) !important;
+  color: var(--p-primary-contrast-color, #fff) !important;
+}
+.text-primary {
+  color: var(--p-primary-color, #e3a04f) !important;
+}
+a.text-primary:hover {
+  color: var(--p-primary-600, #d48838) !important;
+}
+
+/* Hero background – same as Angular (assets/hero-monks.png); placeholder used if PNG missing) */
+.home-bg-image-1 {
+  position: relative;
+  display: block;
+  min-height: 50vh;
+  background-image: url('assets/hero-monks.png'), url('assets/hero-placeholder.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #1a1a2e;
+  margin: 0;
+  padding: 0;
+}
+
+/* WCAG 2.4.7 Focus visible – visible focus indicator (2px outline, offset) */
+a:focus-visible,
+button:focus-visible,
+[href]:focus-visible {
+  outline: 2px solid var(--p-primary-color, #e3a04f);
+  outline-offset: 2px;
+}
+/* Skip link focus already has outline in .skip-link:focus */
+
+/* WCAG 1.4.1 Use of color – links identifiable without color alone (underline) */
+a:not(.p-button):not([class*="p-button"]) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+a:not(.p-button):not([class*="p-button"]):hover {
+  text-decoration-thickness: 2px;
+}
+/* Buttons stay without underline (overridden in thabarwa-overrides) */
+
+/* WCAG 1.4.13 / AAA Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .skip-link {
+    transition: none;
+  }
+  .home-bg-image-1 {
+    background-attachment: scroll;
+  }
+}
+/**
+ * ThaBarWa color scheme overrides – load last so they override PrimeNG's indigo theme.
+ * Ensures primary (amber/gold #e3a04f) is used throughout, no indigo/purple.
+ */
+
+/* Re-apply primary palette so it wins over theme-injected values */
+:root {
+  --p-primary-50: #fdf6ec;
+  --p-primary-100: #fbead2;
+  --p-primary-200: #f6d4a5;
+  --p-primary-300: #f0bd78;
+  --p-primary-400: #e9a652;
+  --p-primary-500: #e3a04f;
+  --p-primary-600: #d48838;
+  --p-primary-700: #b86d2f;
+  --p-primary-800: #93562b;
+  --p-primary-900: #784826;
+  --p-primary-950: #402512;
+  --p-primary-color: #e3a04f;
+  --p-primary-contrast-color: #fff;
+  --p-focus-ring-color: #e3a04f;
+}
+
+/* Static: base button styles – match PrimeNG Lara (padding, radius, shadow) */
+.p-button,
+a.p-button,
+button.p-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  text-decoration: none !important;
+  font-family: inherit;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+.p-button .p-button-label {
+  font-weight: 600;
+}
+.p-button:hover,
+a.p-button:hover {
+  text-decoration: none !important;
+}
+.p-button-outlined,
+a.p-button-outlined {
+  background-color: transparent;
+  border-width: 1px;
+}
+.p-button-raised,
+a.p-button-raised {
+  border-width: 1px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.p-button-raised:hover,
+a.p-button-raised:hover {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.p-button.border-noround,
+a.p-button.border-noround {
+  border-radius: 0;
+}
+
+/* PrimeNG filled (raised) buttons – ThaBarWa primary */
+.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-secondary),
+button.p-button.p-button-raised,
+a.p-button.p-button-raised,
+.p-button-raised {
+  background-color: #e3a04f !important;
+  border-color: #e3a04f !important;
+  color: #fff !important;
+}
+.p-button:not(.p-button-outlined):not(.p-button-text):not(.p-button-secondary):hover,
+button.p-button.p-button-raised:hover,
+a.p-button.p-button-raised:hover,
+.p-button-raised:hover {
+  background-color: #b86d2f !important;
+  border-color: #b86d2f !important;
+  color: #fff !important;
+}
+.p-button-raised .p-button-label,
+.p-button .p-button-label {
+  color: #fff !important;
+}
+
+/* No underline on button labels (links styled as buttons) */
+.p-button .p-button-label,
+a.p-button,
+button.p-button {
+  text-decoration: none !important;
+}
+.p-button:hover .p-button-label,
+a.p-button:hover {
+  text-decoration: none !important;
+}
+
+/* PrimeNG focus ring – ThaBarWa primary (WCAG 2.4.7) */
+.p-button:focus-visible,
+.p-button:focus,
+a.p-button:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(227, 160, 79, 0.5) !important;
+  outline: 2px solid var(--p-primary-color, #e3a04f) !important;
+  outline-offset: 2px;
+}
+
+/* Force .bg-primary and .text-primary everywhere */
+.bg-primary {
+  background-color: #e3a04f !important;
+  color: #fff !important;
+}
+.text-primary {
+  color: #e3a04f !important;
+}
+
+/* Links and any primary-colored elements */
+a[href].p-button-outlined.p-button-primary,
+.p-button-outlined.p-button-primary {
+  color: #e3a04f !important;
+  border-color: #e3a04f !important;
+}
+.p-button-outlined.p-button-primary:hover {
+  background: rgba(227, 160, 79, 0.1) !important;
+  color: #d48838 !important;
+  border-color: #d48838 !important;
+}
+/* Above the fold = banner, logo+button row, hero, 3 main points only.
+   WCAG 1.4.4/1.4.10: at 200% zoom use min-height so content can reflow (no clipping). */
+.above-the-fold {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  gap: 0 !important;
+  row-gap: 0 !important;
+  column-gap: 0 !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.above-the-fold-banner {
+  flex: 0 0 auto;
+}
+.hero-logo-row {
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+  width: 100%;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.hero-overlay-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+@media (max-width: 767px) {
+  .hero-logo-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero-logo-row .hero-brand-text {
+    order: 1;
+  }
+  .hero-logo-row .hero-cta-button {
+    order: 2;
+  }
+}
+.hero-text-center {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+/* Mission/vision block – compact so hero + 3 points fit in 100vh */
+.hero-mission-vision {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 42rem;
+  padding: 0 1rem;
+}
+.mission-vision-heading {
+  margin-bottom: 0.5rem;
+}
+.mission-vision-statement {
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero-cta-row .hero-cta-secondary {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+.hero-cta-row .hero-cta-secondary:hover {
+  border-color: #fff !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+.hero-overlay-inner .text-center {
+  width: 100%;
+}
+.above-the-fold > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.above-the-fold > * + * {
+  margin-top: 0 !important;
+}
+/* Remove any gap after above-the-fold */
+.above-the-fold + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.section-reliable {
+  padding-top: 3rem !important;
+}
+main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+.hero-banner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Hero header row - logo + button blended in overlay */
+.hero-header-row {
+  flex-shrink: 0;
+}
+.hero-cta-button {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.hero-cta-button:hover {
+  border-color: #fff !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Hero section – fills remaining space above the 3 blocks, no gap below */
+.above-the-fold .home-bg-image-1.hero-section {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: block;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border: none;
+  overflow: visible;
+}
+
+/* Hero overlay – fills hero exactly, dark overlay for text readability */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.75rem 1.25rem 1rem !important;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
+}
+.hero-header {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-logo {
+  color: #fff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+.hero-logo-img {
+  max-height: 3rem;
+  width: auto;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+/* Logo image – only used in footer */
+.logo-img {
+  background: transparent !important;
+  object-fit: contain;
+  display: block;
+}
+/* Footer logo: visible on dark background – light container so logo shows clearly */
+.site-footer .logo-img.logo-footer-mask {
+  background: rgba(255, 255, 255, 0.95) !important;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hero header: text brand instead of logo image */
+.hero-brand-text {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .hero-brand-text {
+    font-size: 1rem;
+    white-space: normal;
+  }
+}
+
+/* Sticky header: text brand instead of logo image */
+.sticky-header-brand-text {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.hero-header-button {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.hero-header-button:hover {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.hero-heading,
+.hero-headline {
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+.hero-tagline {
+  color: #fff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  display: block;
+  max-width: 36rem;
+}
+.button-hero-donate {
+  background-color: var(--p-primary-300, #f0bd78) !important;
+  color: #fff !important;
+  border: 2px solid var(--p-primary-200, #f6d4a5) !important;
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.button-hero-donate:hover {
+  background-color: var(--p-primary-400, #e9a652) !important;
+  color: #fff !important;
+  border-color: var(--p-primary-300, #f0bd78) !important;
+}
+.hero-inner .button {
+  margin-top: 1rem;
+  text-shadow: none;
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+}
+.hero-banner {
+  min-height: 60vh;
+}
+
+/* 3 blocks below hero – ThaBarWa primary backgrounds, full width, flush with hero, one row on desktop */
+.above-the-fold .solutions-strip.grid {
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  scroll-margin-top: 4rem;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background-color: transparent !important;
+  display: flex;
+  gap: 0 !important;
+}
+@media (max-width: 767px) {
+  .above-the-fold .solutions-strip.grid {
+    flex-wrap: wrap;
+  }
+  .solutions-strip > [class*="col"] {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+.solutions-strip > [class*="col"] {
+  min-width: 0;
+  background-color: var(--p-primary-color, #e3a04f) !important;
+  color: #fff !important;
+  margin: 0 !important;
+  padding: 1.25rem !important;
+  overflow: visible;
+}
+.solutions-strip > [class*="col"] > div {
+  color: #fff !important;
+}
+/* Semi-transparent overlays on each block */
+.solutions-strip .bg-black-alpha-10 {
+  background-color: color-mix(in srgb, var(--p-primary-color, #e3a04f) 90%, black) !important;
+  color: #fff !important;
+}
+.solutions-strip .bg-black-alpha-20 {
+  background-color: color-mix(in srgb, var(--p-primary-color, #e3a04f) 80%, black) !important;
+  color: #fff !important;
+}
+.solutions-strip .bg-black-alpha-30 {
+  background-color: color-mix(in srgb, var(--p-primary-color, #e3a04f) 70%, black) !important;
+  color: #fff !important;
+}
+/* White circle with dark icon so checkmark is visible - matches original design */
+.solutions-strip .bg-white.solution-icon-circle {
+  background-color: #fff !important;
+  color: var(--p-primary-color, #e3a04f) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  flex-shrink: 0;
+  padding: 0;
+}
+.solutions-strip .solution-icon-circle .pi {
+  font-family: 'primeicons';
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.solution-label {
+  color: #fff !important;
+}
+/* Ensure all text in solutions strip is visible */
+.solutions-strip {
+  color: #fff !important;
+}
+.solutions-strip > div {
+  color: #fff !important;
+}
+.solutions-strip > div > div {
+  color: #fff !important;
+}
+.solutions-strip .bg-white {
+  background-color: #fff !important;
+  color: var(--p-primary-color, #e3a04f) !important;
+}
+.solutions-strip .bg-white i {
+  color: var(--p-primary-color, #e3a04f) !important;
+}
+@media (max-width: 768px) {
+  .solutions-strip {
+    flex-wrap: wrap;
+  }
+  .solutions-strip > [class*="col"] {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+}
+
+.px-250 {
+  padding-left: 250px;
+  padding-right: 250px;
+}
+@media (max-width: 1024px) {
+  .px-250 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .px-250 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.px-200 {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+.px-500 {
+  padding-left: 500px;
+  padding-right: 500px;
+}
+.py-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.pt-200 {
+  padding-top: 200px;
+}
+.pb-200 {
+  padding-bottom: 200px;
+}
+
+/* Sayadaw section – text left, image right (force layout so image stays on right) */
+#sayadaw .grid.max-w-1000 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  box-sizing: border-box;
+}
+#sayadaw .grid > .col {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 0;
+}
+#sayadaw .grid > .col:first-child {
+  order: 1;
+}
+#sayadaw .grid > .col:last-child {
+  order: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  #sayadaw .grid > .col {
+    flex-basis: 100%;
+  }
+  #sayadaw .grid > .col:last-child {
+    justify-content: center;
+  }
+}
+
+/* Meet section – circular image, no stretch (object-fit: cover) */
+.meet-section-img-wrap {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+#sayadaw .grid > .col:last-child .meet-section-img-wrap {
+  margin-left: auto;
+  margin-right: 0;
+}
+@media (max-width: 767px) {
+  #sayadaw .grid > .col:last-child .meet-section-img-wrap {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.meet-section-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.top--250px {
+  top: -250px;
+}
+.max-w-2000 {
+  max-width: 1500px;
+}
+.w-2000 {
+  width: 1500px !important;
+}
+.max-w-1000 {
+  max-width: 1000px;
+}
+.max-w-800 {
+  max-width: 800px;
+}
+
+/* Top banner */
+.top-banner {
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  position: relative;
+  z-index: 102;
+  display: block;
+  background-color: var(--p-primary-color, #e3a04f) !important;
+  color: #fff !important;
+}
+
+/* Sticky header (on scroll) - logo + Contribute button */
+#sticky-header.sticky-header-bar,
+#sticky-header {
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+  overflow: visible;
+}
+/* Original layout: fixed-width row (1500px) with flex space-between so brand left, button right */
+.sticky-header-inner {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 1500px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  gap: 1rem;
+}
+#sticky-header .p-button,
+#sticky-header a.p-button {
+  flex-shrink: 0;
+}
+
+/* Header */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid var(--surface-border, #dee2e6);
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header-inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--text-color, #212529);
+  display: block;
+}
+.main-nav {
+  display: block;
+}
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-color, #212529);
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.main-nav a:hover {
+  color: var(--primary-color, #e3a04f);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+  background-color: #fff;
+  color: var(--text-color, #212529);
+}
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section h5,
+.section h6 {
+  color: var(--text-color, #212529);
+}
+.section p {
+  color: var(--text-color, #212529);
+}
+.hero-banner.section {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.section-banner {
+  background-color: var(--p-primary-color, #e3a04f) !important;
+  color: #fff !important;
+}
+.section-banner h1,
+.section-banner h2,
+.section-banner h3,
+.section-banner h4,
+.section-banner h5,
+.section-banner h6,
+.section-banner p {
+  color: #fff !important;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container-narrow {
+  max-width: 800px;
+}
+.container-wide {
+  max-width: 1400px;
+}
+
+/* Utility classes */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.no-underline {
+  text-decoration: none;
+}
+.link-external {
+  text-decoration: none;
+  color: var(--primary-color, #e3a04f);
+  font-weight: 500;
+}
+.link-external:hover {
+  text-decoration: underline;
+}
+.lead {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.pl-4 {
+  padding-left: 1rem;
+}
+@media (min-width: 576px) {
+  .sm\:text-6xl {
+    font-size: 3.75rem;
+  }
+  .sm\:text-xl {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .md\:text-7xl {
+    font-size: 4.5rem;
+  }
+  .md\:text-2xl {
+    font-size: 1.5rem;
+  }
+}
+
+/* Inline media card */
+.inline-media-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.inline-media-card h3,
+.inline-media-card p {
+  color: var(--text-color, #212529);
+}
+@media (min-width: 768px) {
+  .inline-media-card {
+    flex-direction: row;
+  }
+}
+
+/* Home grid */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .home-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+.home-block {
+  margin-bottom: 3rem;
+}
+
+/* Featured photo: stretched grey placeholder or real image (same wrapper for easy swap) */
+.featured-photo-media {
+  aspect-ratio: 1 / 1;
+  min-width: 420px;
+  min-height: 420px;
+  flex: 1 1 65%;
+  background-color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .featured-photo-media {
+    min-width: 100%;
+    min-height: min(100vw, 420px);
+    aspect-ratio: 1 / 1;
+  }
+}
+.featured-photo-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Media placeholders */
+.media-placeholder {
+  background-color: var(--surface-hover, #e9ecef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-secondary, #6c757d);
+  min-height: 200px;
+}
+.media-placeholder-large {
+  min-height: 400px;
+}
+.map-placeholder {
+  background-color: var(--surface-hover, #e9ecef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color-secondary, #6c757d);
+  min-height: 300px;
+}
+
+/* Lists */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--surface-border, #dee2e6);
+  color: var(--text-color, #212529);
+}
+.news-item h3 {
+  color: var(--text-color, #212529);
+}
+.news-item p {
+  color: var(--text-color, #212529);
+}
+.news-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.news-single {
+  margin-bottom: 1rem;
+  color: var(--text-color, #212529);
+}
+.news-single h3,
+.news-single p {
+  color: var(--text-color, #212529);
+}
+.news-meta {
+  font-size: 0.875rem;
+  color: var(--text-color-secondary, #6c757d);
+}
+.about-list {
+  color: var(--text-color, #212529);
+}
+.about-list li {
+  margin-bottom: 0.75rem;
+  color: var(--text-color, #212529);
+}
+.about-list li span {
+  color: var(--text-color, #212529);
+}
+.plans-list {
+  color: var(--text-color, #212529);
+}
+.plans-list li {
+  margin-bottom: 1rem;
+  color: var(--text-color, #212529);
+}
+.section-about h2,
+.section-about p,
+.section-about .lead {
+  color: var(--text-color, #212529);
+}
+.section-centers h2,
+.section-centers address,
+.section-centers p {
+  color: var(--text-color, #212529);
+}
+.section-mission h2,
+.section-mission p,
+.section-mission .lead {
+  color: var(--text-color, #212529);
+}
+.section-meditation h2,
+.section-meditation p {
+  color: var(--text-color, #212529);
+}
+.section-plans h2,
+.section-plans p {
+  color: var(--text-color, #212529);
+}
+.section-donate h2,
+.section-donate p {
+  color: var(--text-color, #212529);
+}
+.section-home-grid h2,
+.section-home-grid h3,
+.section-home-grid p {
+  color: var(--text-color, #212529);
+}
+
+/* ThaBarWa primary CTA buttons: white text (button and PrimeNG label span) */
+  color: #fff !important;
+}
+  color: #fff !important;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+.button-primary {
+  background-color: var(--primary-color, #e3a04f);
+  color: #fff;
+}
+.button-primary:hover {
+  background-color: var(--primary-700, #b86d2f);
+  color: #fff;
+}
+.section-banner .button-primary {
+  background-color: #fff;
+  color: var(--primary-color, #e3a04f);
+}
+.section-banner .button-primary:hover {
+  background-color: var(--primary-50, #fdf6ec);
+  color: var(--primary-color, #e3a04f);
+}
+.button-secondary {
+  background-color: #fff;
+  color: var(--primary-color, #e3a04f);
+  border-color: var(--primary-color, #e3a04f);
+}
+.button-secondary:hover {
+  background-color: var(--primary-50, #fdf6ec);
+}
+
+/* Footer */
+.site-footer {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 0;
+  border-top: none;
+}
+.footer-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.footer-tagline {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--p-primary-300, #f0bd78);
+  margin-bottom: 1rem;
+}
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+.footer-contact-item {
+  margin-bottom: 1.5rem;
+}
+.footer-contact-item:last-child {
+  margin-bottom: 0;
+}
+.footer-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.footer-link {
+  color: var(--p-primary-300, #f0bd78);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+  display: inline-block;
+}
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.footer-address {
+  font-style: normal;
+  color: var(--p-primary-300, #f0bd78);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+.footer-links li:last-child {
+  margin-bottom: 0;
+}
+.footer-bottom {
+  background-color: #0f0f1e;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+}
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+.footer-legal-link:hover {
+  color: var(--p-primary-300, #f0bd78);
+  text-decoration: underline;
+}
+.footer-handcrafted {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8125rem;
+}
+.footer-handcrafted .text-primary {
+  color: var(--p-primary-300, #f0bd78) !important;
+}
+@media (max-width: 768px) {
+  .footer-heading {
+    font-size: 1.25rem;
+  }
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+/* Hero overlay – not in PrimeFlex */
+.bg-black-alpha-70 { background-color: rgba(0,0,0,0.7); }
+
+/* ========== Fluid layout & mobile ========== */
+/* Single breakpoint: 768px (stack below, row above). Use fluid typography and spacing. */
+
+/* Prevent horizontal overflow */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+/* Fluid section padding – reduce on small screens */
+@media (max-width: 767px) {
+  main section[class*="px-8"],
+  main section.flex.px-8,
+  #mission-vision,
+  #featured-photo,
+  #how-to-contribute,
+  #sayadaw,
+  #news,
+  #where-sayadaw-is,
+  #photo,
+  #video {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .section-mission-vision,
+  .section-reliable {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .container-wide.px-8,
+  .site-footer .container-wide {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .footer-bottom .container-wide {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Above-the-fold: allow natural height on mobile so content isn’t squashed */
+@media (max-width: 767px) {
+  .above-the-fold {
+    min-height: auto;
+  }
+  .above-the-fold .home-bg-image-1.hero-section {
+    min-height: min(80vh, 600px);
+  }
+  .above-the-fold-banner {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem;
+  }
+}
+
+/* Hero: fluid typography and spacing */
+.hero-headline,
+#hero-heading,
+.above-the-fold .hero-section h1 {
+  font-size: clamp(1.5rem, 4.5vw + 1rem, 4.5rem) !important;
+  line-height: 1.2;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.hero-tagline,
+.above-the-fold .hero-section .text-xl {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem) !important;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media (max-width: 767px) {
+  .hero-overlay {
+    padding: 0.75rem 1rem 1rem !important;
+  }
+  .hero-overlay-inner {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .hero-text-center .pt-8 {
+    padding-top: 1rem !important;
+  }
+  .hero-cta-row {
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Section headings: fluid size */
+h2.text-4xl,
+#mission-heading,
+#how-to-contribute-heading,
+#sayadaw-heading,
+#get-started-heading {
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 2.25rem) !important;
+}
+h2.text-3xl {
+  font-size: clamp(1.25rem, 3vw + 0.5rem, 1.875rem) !important;
+}
+
+/* Sticky header: compact on mobile */
+@media (max-width: 767px) {
+  #sticky-header {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .sticky-header-inner {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    gap: 0.5rem;
+  }
+  .sticky-header-brand-text {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+/* Impact grid (Our Impact): two columns → one column on mobile */
+@media (max-width: 767px) {
+  #how-to-contribute .grid .col-6 {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100%;
+  }
+  #how-to-contribute .grid {
+    flex-wrap: wrap;
+  }
+}
+
+/* “Ways to participate” grid (Donate / Volunteer / Connect): stack on mobile */
+@media (max-width: 767px) {
+  main .grid.bg-primary[aria-label="Ways to participate"] {
+    flex-wrap: wrap;
+  }
+  main .grid.bg-primary[aria-label="Ways to participate"] > .col {
+    flex: 1 1 100% !important;
+    min-width: 100%;
+  }
+}
+
+/* Featured / inline media: ensure column layout on mobile */
+@media (max-width: 767px) {
+  .inline-media-card {
+    flex-direction: column !important;
+  }
+  .max-w-1000,
+  .max-w-800 {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Footer grid: stack columns on mobile */
+@media (max-width: 767px) {
+  .site-footer .grid {
+    flex-wrap: wrap;
+  }
+  .site-footer .grid > [class*="col"] {
+    flex: 1 1 100% !important;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .site-footer .mb-6 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* Get started section */
+@media (max-width: 767px) {
+  section[aria-labelledby="get-started-heading"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* Buttons: full-width on mobile where it helps (e.g. hero CTA row) */
+@media (max-width: 767px) {
+  .hero-cta-row .p-button {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+/* Solutions strip: touch-friendly and stacked */
+@media (max-width: 767px) {
+  .solutions-strip > [class*="col"] {
+    padding: 1.25rem 1rem !important;
+    min-height: 3.5rem;
+  }
+}
